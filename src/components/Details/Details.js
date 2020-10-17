@@ -15,7 +15,7 @@ const Details = props => {
 	}, [getLaunch, props.match.params.id])
 	const history = useHistory();
 
-	if(!launch) return <div>Загрузка</div>
+	if(!launch) return <div className="preloader">Загрузка...</div>
 	return (
 		<>
 			<Main name={launch.name}/>
@@ -31,7 +31,7 @@ const Details = props => {
 					</div>
 					<Youtube className="details-youtube" videoId={launch.links.youtube_id} />
 				</div>
-				<a onClick={history.goBack} className="button button-back">go back</a>
+				<button onClick={history.goBack} className="button button-back">go back</button>
 			</main>
 		</>
 	)
