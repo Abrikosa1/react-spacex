@@ -42,6 +42,7 @@
   box-sizing: border-box;
   border-radius: 6px;
   text-decoration: none;
+  background-color: inherit;
 }
 
 @media (max-width: 576px) {

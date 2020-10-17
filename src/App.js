@@ -68,8 +68,7 @@ class App extends React.Component {
         />
 
         <Route path='/rocket'
-          //'/rocket/:rocket'
-          render={({ match }) => this.state.rocketFeatures && <Features {...this.state.rocketFeatures} match={match} />}
+          render={() => this.state.rocketFeatures && <Features {...this.state.rocketFeatures} />}
         />
 
         <Route path='/calendar' component={Calendar} />
