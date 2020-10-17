@@ -10,7 +10,10 @@
   font-size: 32px;
   margin-bottom: 30px;
 }
-
+/* .details-title{
+  text-align: center;
+  margin-top: 20px;
+} */
 .details-image,
 .details-content {
   margin: 0 30px;
