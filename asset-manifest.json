@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-spacex/static/css/main.af42644f.chunk.css",
-    "main.js": "/react-spacex/static/js/main.ccaee064.chunk.js",
-    "main.js.map": "/react-spacex/static/js/main.ccaee064.chunk.js.map",
+    "main.js": "/react-spacex/static/js/main.45837118.chunk.js",
+    "main.js.map": "/react-spacex/static/js/main.45837118.chunk.js.map",
     "runtime-main.js": "/react-spacex/static/js/runtime-main.1db52588.js",
     "runtime-main.js.map": "/react-spacex/static/js/runtime-main.1db52588.js.map",
     "static/js/2.1969dc95.chunk.js": "/react-spacex/static/js/2.1969dc95.chunk.js",
     "static/js/2.1969dc95.chunk.js.map": "/react-spacex/static/js/2.1969dc95.chunk.js.map",
     "index.html": "/react-spacex/index.html",
-    "precache-manifest.a2f558660536c87c7493d913ef872ecb.js": "/react-spacex/precache-manifest.a2f558660536c87c7493d913ef872ecb.js",
+    "precache-manifest.7015cf4afcd56b1e88eb98accffffb5a.js": "/react-spacex/precache-manifest.7015cf4afcd56b1e88eb98accffffb5a.js",
     "service-worker.js": "/react-spacex/service-worker.js",
     "static/css/main.af42644f.chunk.css.map": "/react-spacex/static/css/main.af42644f.chunk.css.map",
     "static/js/2.1969dc95.chunk.js.LICENSE.txt": "/react-spacex/static/js/2.1969dc95.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.1db52588.js",
     "static/js/2.1969dc95.chunk.js",
     "static/css/main.af42644f.chunk.css",
-    "static/js/main.ccaee064.chunk.js"
+    "static/js/main.45837118.chunk.js"
   ]
 }
