@@ -48,7 +48,7 @@ const Features = ({ name, height, diameter, mass, payload_weights: payloadWeight
           </table>
           <RellaxWrapper speed={14}>
             <img
-              src={`./img/${rocketImages[name]}.png`}
+              src={`${process.env.PUBLIC_URL}/img/${rocketImages[name]}.png`}
               alt="rocket"
               className="rocket"
             />
