@@ -6,7 +6,7 @@ import './header.css'
 
 const Header = props => (
   <header className="header">
-    <Link to="/">
+    <Link to="/react-spacex/">
       <img
         src={logo}
         alt="Logo Space X"
@@ -18,7 +18,7 @@ const Header = props => (
         {props.rockets.map((item, i) => (
           <li key={i} className="item">
             <Link 
-              to='/rocket'
+              to='/react-spacex/rocket'
               onClick={() => {
                 props.changeRocket(item);
               }}
@@ -33,10 +33,10 @@ const Header = props => (
     <nav className="secondary-nav">
       <ul className="list">
         <li className="item">
-          <NavLink exact to="/" className="item-link" activeClassName="active">Home</NavLink>
+          <NavLink exact to="/react-spacex/" className="item-link" activeClassName="active">Home</NavLink>
         </li>
         <li className="item">
-          <NavLink to="/calendar" className="item-link" activeClassName="active">Calendar</NavLink>
+          <NavLink to="/react-spacex/calendar" className="item-link" activeClassName="active">Calendar</NavLink>
         </li>
       </ul>
     </nav>
