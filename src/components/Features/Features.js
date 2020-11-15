@@ -3,6 +3,7 @@ import RellaxWrapper from 'react-rellax-wrapper';
 import Main from '../Main/Main';
 import './features.css';
 
+
 const rocketImages = {
   'Falcon 1': 'falcon-1',
   'Falcon 9': 'falcon-9',
@@ -48,7 +49,9 @@ const Features = ({ name, height, diameter, mass, payload_weights: payloadWeight
           </table>
           <RellaxWrapper speed={14}>
             <img
-              src={`./img/${rocketImages[name]}.png`}
+              src={`${process.env.PUBLIC_URL}/img/${rocketImages[name]}.png`}
+              // src={`./img/${rocketImages[name]}.png`}
+              // src={`${'../../img/' + rocketImages[name] + '.png'}`}
               alt="rocket"
               className="rocket"
             />

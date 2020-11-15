@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Features from './components/Features/Features';
@@ -12,63 +11,60 @@ import FetchData from './service/FetchData';
 
 import './style.css';
 
-class App extends React.Component {
+const initialState = {
+  rocket: 'Falcon 1',
+  rocketFeatures: null,
+  rockets: [],
+  company: null,
+}
 
-  // constructor(){
-  //   super();
-  //   this.state = 
-  // }
-  
-  fetchData = new FetchData();
+const App =() => {
+  const fetchData = new FetchData();
 
-  state = {
-    rocket : 'Falcon 1',
-    rocketFeatures: null,
-    rockets: [],
-    company: null,
-  }
 
-  componentDidMount() {
-    this.updateRocket();
-    this.updateCompany();
-  }
-
-  updateRocket() {
-    this.fetchData.getRocket()
-    .then(data =>{
-      this.setState({ rockets: data.map(item => item.name)})
+  const [state, setState] = useState(initialState);
+  const updateRocket = () => {
+    fetchData.getRocket()
+    .then(data => {
+      setState(state => ({...state, rockets: data.map(item => item.name)}));
       return data;
     })
-    .then(data => data.find(item => item.name === this.state.rocket))
-    .then(rocketFeatures => this.setState({ rocketFeatures }));
+    .then(data => data.find(item => item.name === state.rocket))
+    .then(rocketFeatures => setState(state => ({...state, rocketFeatures: rocketFeatures})));
+
   }
+
   
 
-
-  changeRocket = rocket => {
-    this.setState({
-      rocket
-    }, this.updateRocket);
+  const updateCompany = () => {
+    fetchData.getCompany()
+    .then(company => setState(state => ({...state, company: company})))
   }
 
-  updateCompany = () => {
-    this.fetchData.getCompany()
-    .then(company => this.setState({ company }))
+  useEffect (() => {
+    updateRocket();
+    updateCompany();
+  }, [])
+
+
+  const changeRocket = rocket => {
+    setState(state => ({...state, rocket: rocket}));
+    updateRocket();
   }
+  useEffect (() => {
+  }, [state])
 
-
-  render() {
     return (
       <BrowserRouter> 
-        <Header rockets={this.state.rockets} changeRocket={this.changeRocket} />
-        <Route exact path='/' render={() => this.state.company && <Home company = {this.state.company}/>} />
-        <Route path='/rocket' render={() => this.state.rocketFeatures && <Features {...this.state.rocketFeatures} />} />
+        <Header rockets={state.rockets} changeRocket={changeRocket}/>
+        <Route exact path='/' render={() => state.company && <Home company = {state.company}/>} />
+        <Route path='/rocket' render={() => state.rocketFeatures && <Features {...state.rocketFeatures} />} />
         <Route path='/calendar' component={Calendar} />
         <Route path='/details/:id' component={Details} />
-        {this.state.company && <Footer {...this.state.company} />}
-      </BrowserRouter> ///React.Fragment
+        {state.company && <Footer {...state.company} />}
+        
+      </BrowserRouter> 
    );
-  }
 }
 
 export default App;

@@ -20,9 +20,10 @@ return (
       <video 
         className="video" 
         autoPlay loop muted 
-        src={`./video/${video.hasOwnProperty(rocket) ? video[rocket] : video.other}.mp4`}>
+        src={`${process.env.PUBLIC_URL}/video/${video.hasOwnProperty(rocket) ? video[rocket] : video.other}.mp4`}>
       </video>
     </div>}
   </section>
-);}
+);}  
+
 export default Main;
