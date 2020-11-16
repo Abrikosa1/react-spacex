@@ -1,3 +1,6 @@
+# Deployed app: 
+https://abrikosa1.github.io/react-spacex/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
